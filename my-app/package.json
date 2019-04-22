@@ -1,0 +1,43 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/jest": "24.0.11",
+    "@types/node": "11.13.6",
+    "@types/react": "16.8.14",
+    "@types/react-dom": "16.8.4",
+    "@types/styled-components": "^4.1.14",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8",
+    "styled-components": "^4.2.0",
+    "typescript": "3.4.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:styles": "stylelint \"**/*.styled.{js, tsx}\"",
+    "lint:scripts": "tslint -c tslint.json --project tsconfig.json \"**/*.{js,ts,tsx}\"",
+    "lint": "yarn lint:styles & yarn lint:scripts"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "stylelint": "^10.0.1",
+    "tslint": "^5.16.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0"
+  }
+}

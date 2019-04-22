@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-airbnb",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": ["node_modules/**", ".next/**"]
+  },
+  "rules": {
+    "import-name": false,
+    "interface-name": [true, "never-prefix"],
+    "interface-over-type-literal": false,
+    "jsx-boolean-value": ["never"],
+    "member-access": false,
+    "no-namespace": [true, "allow-declarations"],
+    "variable-name": [true, "allow-pascal-case", "allow-leading-underscore"],
+    "object-literal-sort-keys": false,
+    "object-shorthand-properties-first": false,
+    "ordered-imports": false,
+    "prefer-template": false,
+    "jsx-no-lambda": false
+  },
+  "jsRules": {
+    "object-literal-sort-keys": false
+  }
+}
