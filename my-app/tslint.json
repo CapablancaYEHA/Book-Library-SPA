@@ -15,7 +15,7 @@
     "interface-over-type-literal": false,
     "jsx-boolean-value": ["never"],
     "member-access": false,
-    "no-namespace": [true, "allow-declarations"],
+    "no-namespace": [false, "allow-declarations"],
     "variable-name": [true, "allow-pascal-case", "allow-leading-underscore"],
     "object-literal-sort-keys": false,
     "object-shorthand-properties-first": false,

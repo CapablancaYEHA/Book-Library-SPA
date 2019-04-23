@@ -25,8 +25,8 @@ const BookPreview = ({ onClick}: BookPreviewProps) => (
         </BookAuthor>
 
       </ItemBody>
-      <EditButton onClick={onClick}/>
-      <DeleteButton onClick={onClick}/>
+      <EditButton onClick={onClick} type="submit" />
+      <DeleteButton onClick={onClick} type="submit" />
     </Container>
 );
 
