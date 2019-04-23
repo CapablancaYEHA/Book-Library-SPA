@@ -19,9 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "yarn lint:styles & yarn lint:scripts",
     "lint:styles": "stylelint \"**/*.styled.{js, tsx}\"",
-    "lint:scripts": "tslint -c tslint.json --project tsconfig.json \"**/*.{js,ts,tsx}\"",
-    "lint": "yarn lint:styles & yarn lint:scripts"
+    "lint:scripts": "tslint -c tslint.json --project tsconfig.json \"**/*.{js,ts,tsx}\""
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -25,10 +25,13 @@
     "isolatedModules": true
   },
   "include": [
-    "src"
+    "src/*"
   ],
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.spec.ts",
+    "src/sw-*.js",
+    "src/idb.js"
   ]
 }

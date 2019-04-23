@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  background: red;
+const BaseLayoutContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const BaseLayoutContent = styled.div`
+  flex-grow: 1;
 `;
 
 
-export { Container };
+export {
+  BaseLayoutContainer,
+  BaseLayoutContent
+};

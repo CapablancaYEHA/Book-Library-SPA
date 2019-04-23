@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe,
+div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -14,7 +14,6 @@ time, mark, audio, video {
  margin: 0;
  padding: 0;
  border: 0;
- font-size: 100%;
  font: inherit;
  vertical-align: baseline;
 }
@@ -24,12 +23,16 @@ footer, header, hgroup, menu, nav, section {
 }
 html {
  box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ border: 0;
+ width:100%;min-height:100%;height:100%;font-size:62.5%;font-weight:400;line-height:normal;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative
 }
 *, *:before, *:after {
  box-sizing: inherit;
 }
 body {
- line-height: 1;
+  width:100%;min-height:100%;margin:0;padding:0;background-color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-flow:column wrap;flex-flow:column wrap;-webkit-box-align:space-between;-ms-flex-align:space-between;align-items:space-between;position:relative
 }
 ol, ul {
  list-style: none;
@@ -49,4 +52,7 @@ table {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#root, #__next {
+max-width: 100%;
 }
