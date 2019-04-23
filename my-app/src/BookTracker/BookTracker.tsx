@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Container } from "../layout-components/Container";
 import { BookPreview } from "./BookPreview";
-import { BookDetailed } from "./BookDetailed";
+// import { BookDetailed } from "./BookDetailed";
 import { ModalWindow } from "./ModalWindow";
 
 import {
@@ -16,11 +16,16 @@ import {
   LangSign
 } from "./BookTracker.styled";
 
-const BookTracker = () => (
-  <>
+import { BookParamsTypes } from "./types/BookParamsTypes";
+
+type BookTrackerProps = {
+  book: BookParamsTypes[];
+};
+
+const BookTracker = ({ book }: BookTrackerProps) => (
   <Container>
     <SwitchContainer>
-      <LangButton type="button" onClick={() => ({})} />
+      <LangButton type="button" onClick={() => ({ })} />
       <LangSign>English</LangSign>
     </SwitchContainer>
     <TrackerLayout>
@@ -32,13 +37,14 @@ const BookTracker = () => (
       </MasterContainer>
 
       <DetailContainer>
-        <BookDetailed />
+        {/*
+          <BookDetailed book={book}/>
+          */}
       </DetailContainer>
 
       <ModalWindow />
     </TrackerLayout>
   </Container>
-  </>
 );
 
 export { BookTracker };
