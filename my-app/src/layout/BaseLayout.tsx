@@ -1,17 +1,20 @@
 import * as React from 'react';
 
 import {
-  Container
+  BaseLayoutContainer,
+  BaseLayoutContent
 } from "./BaseLayout.styled";
 
 type BaseLayoutProps = {
-  children: React.ReactElement[];
+  children: React.ReactNode;
 }
 
 const BaseLayout = ({ children }: BaseLayoutProps) => (
-  <Container>
-    {children}
-  </Container>
+  <BaseLayoutContainer>
+    <BaseLayoutContent>
+      {children}
+    </BaseLayoutContent>
+  </BaseLayoutContainer>
 );
 
 export { BaseLayout };
