@@ -35,12 +35,6 @@ const Input = styled.input<{
   }
 
   ${props =>
-    props.active &&
-    `
-    border-color: blue;
-  `};
-
-  ${props =>
     props.isPlaceholderVisible &&
     `
       &::placeholder {
