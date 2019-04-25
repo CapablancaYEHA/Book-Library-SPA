@@ -9,6 +9,7 @@ const Container = styled.div`
   position: relative;
   display: flex;
   max-width: 100%;
+  margin-bottom: 16px;
   flex-flow: row nowrap;
   justify-content: space-between;
   min-width: 0;

@@ -8,7 +8,7 @@ import flag_gb from "./img/GB.png";
 const SwitchContainer = styled.div`
   position: relative;
   max-width: 100%;
-  padding: 32px 16px;
+  padding: 8px 16px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
@@ -29,13 +29,14 @@ const LangButton = styled(Button)`
 
 const LangSign = styled.span`
   font-size: 14px;
+  cursor: pointer;
 `;
 
 const TrackerLayout = styled.div`
   position: relative;
   max-width: 100%;
   min-height: 100%;
-  height: 100%;
+  height: 100vh;
   margin-bottom: 8px;
   display: flex;
   background-color: #eaeaea;
@@ -50,6 +51,7 @@ const DetailContainer = styled.div`
   padding: 48px 32px;
   background-color: #ffffff;
   border: 1px solid #dddddd;
+  overflow-y: auto;
 `;
 
 const MasterContainer = styled.div`

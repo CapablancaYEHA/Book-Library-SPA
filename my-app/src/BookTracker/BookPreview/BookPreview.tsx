@@ -1,5 +1,9 @@
 import * as React from 'react';
 
+// import { Link } from 'react-router-dom';
+
+import {Link} from "../../base-components/Link";
+
 import {
   Container,
   ItemBody,
@@ -9,25 +13,27 @@ import {
   BookAuthor
 } from "./BookPreview.styled";
 
+import { BookParamsTypes } from "../types/BookParamsTypes";
+
 type BookPreviewProps = {
-  onClick: () => void;
+  book: BookParamsTypes;
 }
 
-const BookPreview = ({ onClick}: BookPreviewProps) => (
+const BookPreview = ({ book }: BookPreviewProps) => (
+  <Link to={`/book${book.id}`}>
     <Container>
       <ItemBody>
         <BookTitle>
-          Долгие сказание о зиме и прочих неприятностях народа
+          {book.title}
         </BookTitle>
-
         <BookAuthor>
-          Иван Дорн, Кристофер Нолан
+          {book.author}
         </BookAuthor>
-
       </ItemBody>
-      <EditButton onClick={onClick} type="submit" />
-      <DeleteButton onClick={onClick} type="submit" />
+      <EditButton onClick={() => ({})} type="submit" />
+      <DeleteButton onClick={() => ({})} type="submit" />
     </Container>
+  </Link>
 );
 
 export { BookPreview };
