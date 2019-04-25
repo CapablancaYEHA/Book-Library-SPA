@@ -11,6 +11,7 @@ const severalBooks: BookParamsTypes[] = [
     bookCode: "978-3-16-148410-0",
     cover: testCover1,
     pubDate: 2015,
+    id: 1
   },
   {
     title: "Некоторое название",
@@ -18,17 +19,20 @@ const severalBooks: BookParamsTypes[] = [
     bookCode: "978-3-16-148410-0",
     cover: testCover2,
     pubDate: 1990,
-  },
-  {
-    title: "Название книги",
-    author: "Фамилия Имя Отчество",
-    bookCode: "978-3-16-148410-0"
+    id: 2
   },
   {
     title: "Название книги",
     author: "Фамилия Имя Отчество",
     bookCode: "978-3-16-148410-0",
-    cover: testCover3
+    id: 3
+  },
+  {
+    title: "Название книги",
+    author: "Фамилия Имя Отчество",
+    bookCode: "978-3-16-148410-0",
+    cover: testCover3,
+    id: 4
   }
 ];
 

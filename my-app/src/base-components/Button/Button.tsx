@@ -26,6 +26,15 @@ const Button = styled.button.attrs(props => ({ type: props.type || "button" }))`
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  &:disabled {
+    background-color: #b7c5d2;
+    cursor: default;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 6px;
+    }
+  }
 `;
 
 export { Button };
