@@ -14,7 +14,7 @@ type ButtonProps = {
 }
 
 const Button = ({ children, className, onClick, type = "submit" }: ButtonProps) => (
-  <StyledButton onClick={onClick} type={type} className={className}>
+  <StyledButton onClick={onClick} type={type} className={className} >
     {children}
   </StyledButton>
 );

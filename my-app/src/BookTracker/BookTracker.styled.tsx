@@ -59,6 +59,7 @@ const MasterContainer = styled.div`
   width: 40%;
   padding: 16px 8px;
   background-color: #dddddd;
+  overflow-y: scroll;
 `;
 
 const AddButtonContainer = styled.div`
