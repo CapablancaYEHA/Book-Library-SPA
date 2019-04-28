@@ -19,22 +19,47 @@ import {
 
 import { BookParamsTypes } from "./types/BookParamsTypes";
 
+import {db} from "../IndexedDB";
+
 type BookTrackerProps = {
   books: BookParamsTypes[];
 };
 
 type BookTrackerState = {
   isModalOpen: boolean;
+  books: BookParamsTypes[];
 };
 
 class BookTracker extends React.Component<BookTrackerProps, BookTrackerState> {
   state = {
-    isModalOpen: false
+    isModalOpen: false,
+    books: []
+  }
+
+  componentDidMount() {
+    db.table('books').toArray().then((books) => {
+        this.setState({ books });
+      });
+  }
+
+  addBook = (book: BookParamsTypes):void => {
+    const bookItem = {
+      title: book.title,
+      author: book.author,
+      cover: book.cover,
+      isbn: book.bookCode,
+      pubdate: book.pubDate,
+      done: false,
+    };
+    db.table('books')
+      .add(bookItem)
+      .then((id) => {
+        const newList = [...this.state.books, Object.assign({}, book, { id })];
+        this.setState({ books: newList });
+      });
   }
 
   render() {
-    const books = this.props.books;
-
     const toggleModal = (e: React.MouseEvent<HTMLButtonElement>): void => {
       e.preventDefault();
       this.setState({
@@ -54,24 +79,23 @@ class BookTracker extends React.Component<BookTrackerProps, BookTrackerState> {
               <AddButton onClick={toggleModal}/>
             </AddButtonContainer>
             <>
-              {books.map((book, i: number) => (
+              {this.state.books.map((book, i: number) => (
                 <BookPreview key={i} book={book} />
               ))}
             </>
           </MasterContainer>
 
           <DetailContainer>
-            {books.map((book, j: number) => (
-              <Route key={j} path={`/book${book.id}`} render={props => <BookDetailed book={book} match={book.id} {...props}/>}/>
+            {this.state.books.map((book, j: number) => (
+              <Route key={j} path={`/book${j+1}`} render={props => <BookDetailed book={book} match={j+1} {...props}/>}/>
             ))}
           </DetailContainer>
 
-          <ModalWindow isOpen={this.state.isModalOpen} operateModal={toggleModal}/>
+          <ModalWindow isOpen={this.state.isModalOpen} operateModal={toggleModal} addBook={this.addBook}/>
         </TrackerLayout>
       </Container>
     )
   }
-
 };
 
 export { BookTracker };

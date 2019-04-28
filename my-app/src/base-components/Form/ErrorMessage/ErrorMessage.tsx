@@ -6,18 +6,12 @@ import {
 } from "./ErrorMessage.styled";
 
 type ErrorMessageProps = {
-  /** Ошибка, в которую можно поместить кликабельный элемент */
   actionOnError?: {
-    /** Ошибка, совпадение с которой покажет кликабельную ошибку */
     conditionalError: string;
-    /** Кликабельный элемент в виде строки */
     callToAction: string;
-    /** Текс ошибки после кликабельного элемента */
     messageAfterAction?: string;
-    /** Колбэк, срабатывающий по нажатию на кликабельный элемент */
     onClick: () => void;
   };
-  /** Ошибка */
   error?: string;
 };
 

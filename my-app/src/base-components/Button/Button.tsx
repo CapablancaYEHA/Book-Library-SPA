@@ -1,40 +1,22 @@
-import styled from "styled-components";
+import * as React from 'react';
 
-const Button = styled.button.attrs(props => ({ type: props.type || "button" }))`
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  border: none;
-  background: none;
-  border-radius: 2px
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  cursor: pointer;
-  outline: none;
+import {
+  StyledButton
+} from "./Button.styled";
 
-  &:after {
-    position: absolute;
-    content: "";
-    width: 25px;
-    height: 25px;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    background: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+import {button} from "../../BookTracker/types";
 
-  &:disabled {
-    background-color: #b7c5d2;
-    cursor: default;
+type ButtonProps = {
+  children?: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: button;
+  className?: string;
+}
 
-    &:hover {
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 6px;
-    }
-  }
-`;
+const Button = ({ children, className, onClick, type = "submit" }: ButtonProps) => (
+  <StyledButton onClick={onClick} type={type} className={className}>
+    {children}
+  </StyledButton>
+);
 
 export { Button };

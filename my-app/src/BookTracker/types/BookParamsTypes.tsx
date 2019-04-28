@@ -3,6 +3,6 @@ export type BookParamsTypes = {
   author: string;
   bookCode: string;
   cover?: string;
-  pubDate?: number;
-  id: number;
+  pubDate?: string;
+  id?: number;
 };

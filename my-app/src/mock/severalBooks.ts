@@ -10,7 +10,7 @@ const severalBooks: BookParamsTypes[] = [
     author: "Иван Дорн, Кристофер Нолан",
     bookCode: "978-3-16-148410-0",
     cover: testCover1,
-    pubDate: 2015,
+    pubDate: "2015",
     id: 1
   },
   {
@@ -18,7 +18,7 @@ const severalBooks: BookParamsTypes[] = [
     author: "Фамилия Имя",
     bookCode: "978-3-16-148410-0",
     cover: testCover2,
-    pubDate: 1990,
+    pubDate: "1990",
     id: 2
   },
   {
