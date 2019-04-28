@@ -8,17 +8,19 @@ import {
   CloseButton
 } from "./ModalWindow.styled";
 
+import { BookParamsTypes } from "../types/BookParamsTypes";
 
 type ModalWindowProps = {
   isOpen: boolean;
   operateModal: (e: React.MouseEvent<HTMLButtonElement> ) => void;
+  addBook: (book: BookParamsTypes) => void;
 }
 
-const ModalWindow = ({isOpen, operateModal}: ModalWindowProps) => (
+const ModalWindow = ({isOpen, operateModal, addBook}: ModalWindowProps) => (
   <ModalContainer isOpen={isOpen}>
     <CloseButton type="button" onClick={operateModal}/>
     <Title>Добавление новой книги</Title>
-    <BookForm />
+    <BookForm addBook={addBook}/>
   </ModalContainer>
 );
 

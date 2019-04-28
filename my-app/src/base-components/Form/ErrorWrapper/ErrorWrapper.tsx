@@ -6,13 +6,9 @@ import { ErrorMessage } from "../ErrorMessage";
 
 type ErrorWrapperType = {
   actionOnError?: {
-    /** Ошибка, совпадение с которой покажет кликабельную ошибку */
     conditionalError: string;
-    /** Кликабельный элемент в виде строки */
     callToAction: string;
-    /** Текс ошибки после кликабельного элемента */
     messageAfterAction?: string;
-    /** Колбэк, срабатывающий по нажатию на кликабельный элемент */
     onClick: () => void;
   };
   children: React.ReactNode;
