@@ -6,7 +6,7 @@ import {
   BookAuthor,
   Cover,
   BookCode,
-  PubDate
+  Pubdate
 } from "./BookDetailed.styled";
 
 import { BookParamsTypes } from "../types/BookParamsTypes";
@@ -21,7 +21,7 @@ const BookDetailed = ({book}: BookDetailedProps) => (
       <BookAuthor>Авторство: {book.author}</BookAuthor>
       {book.cover && <Cover src={book.cover} alt={`cover${book.id}`} />}
       <BookCode>ISBN: {book.bookCode}</BookCode>
-      {book.pubDate && <PubDate>Год выпуска: {book.pubDate}</PubDate>}
+      {book.pubDate && <Pubdate>Год выпуска: {book.pubDate}</Pubdate>}
     </Container>
 );
 

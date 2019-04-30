@@ -3,7 +3,8 @@ import styled from "styled-components";
 const Container = styled.div`
   position: relative;
   max-width: 100%;
-  height: 100%;
+  min-height: 100px;
+  height: auto;
   flex-flow: column wrap;
   align-items: flex-start;
 `;
@@ -34,7 +35,7 @@ const BookCode = styled.div`
   margin-bottom: 16px;
 `;
 
-const PubDate = styled.div`
+const Pubdate = styled.div`
   font-size: 14px;
   line-height: 1.33;
 `;
@@ -45,5 +46,5 @@ export {
   BookAuthor,
   Cover,
   BookCode,
-  PubDate
+  Pubdate
 };

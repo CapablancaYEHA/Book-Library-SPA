@@ -15,9 +15,10 @@ import { BookParamsTypes } from "../types/BookParamsTypes";
 
 type BookPreviewProps = {
   book: BookParamsTypes;
+  deleteBook: (id: number | undefined) => void;
 }
 
-const BookPreview = ({ book }: BookPreviewProps) => (
+const BookPreview = ({ book, deleteBook }: BookPreviewProps) => (
   <Link to={`/book${book.id}`}>
     <Container>
       <ItemBody>
@@ -29,7 +30,7 @@ const BookPreview = ({ book }: BookPreviewProps) => (
         </BookAuthor>
       </ItemBody>
       <EditButton onClick={() => ({})} type="submit" />
-      <DeleteButton onClick={() => ({})} type="submit" />
+      <DeleteButton onClick={() => deleteBook(book.id)} type="submit" />
     </Container>
   </Link>
 );

@@ -36,7 +36,7 @@ const TrackerLayout = styled.div`
   position: relative;
   max-width: 100%;
   min-height: 100%;
-  height: 100vh;
+  height: 700px;
   margin-bottom: 8px;
   display: flex;
   background-color: #eaeaea;
@@ -59,7 +59,7 @@ const MasterContainer = styled.div`
   width: 40%;
   padding: 16px 8px;
   background-color: #dddddd;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 const AddButtonContainer = styled.div`

@@ -27,14 +27,14 @@ const Button = styled.button.attrs(props => ({ type: props.type || "submit" }))`
     background-repeat: no-repeat;
   }
 
-  &:disabled {
-    background-color: #b7c5d2;
-    cursor: default;
+    &:disabled {
+      background-color: #b7c5d2;
+      cursor: default;
 
-    &:hover {
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 6px;
+      &:hover {
+        box-shadow: 0px 0px 9px rgb(137, 0, 0, 0.4);
+      }
     }
-  }
 `;
 
 export { Button as StyledButton};
