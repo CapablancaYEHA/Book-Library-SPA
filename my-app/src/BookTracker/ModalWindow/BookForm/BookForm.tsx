@@ -67,6 +67,11 @@ class BookForm extends React.Component<BookFormProps, BookFormState> {
 
   render() {
     const {addBook} = this.props;
+    const { IsbnHasError, PubdateHasError, TitleHasError, AuthorHasError, title, author , isbn } = this.state;
+    
+    const noValidFields = IsbnHasError || PubdateHasError || TitleHasError || AuthorHasError;
+    const inputsEmpty = title === "" || author === "" || isbn === "" ;
+    const isDisabled = noValidFields || inputsEmpty;
 
     return (
       <FormContainer>
@@ -75,7 +80,7 @@ class BookForm extends React.Component<BookFormProps, BookFormState> {
         <BookInput name="cover" label="Обложка" placeholder="URL изображения" value={this.state.cover} onChange={this.onChange} />
         <BookInput name="isbn" label="ISBN книги" placeholder="Например, 2-266-11156-6" error="невалидный ISBN" value={this.state.isbn} onChange={this.onChange} onBlur={this.onBlurISBN} showError={this.state.IsbnHasError} />
         <BookInput name="pubdate" label="Год публикации" placeholder="Например, 2019" error="неверный год публикации" value={this.state.pubdate} onChange={this.onChange} onBlur={this.onBlurPubdate} showError={this.state.PubdateHasError} />
-        <SubmitButton type="submit" onClick={(event) => {addBook({title: this.state.title, author: this.state.author, bookCode: this.state.isbn, cover: this.state.cover, pubDate: this.state.pubdate });this.resetState(event)}}>Добавить книгу</SubmitButton>
+        <SubmitButton isDisabled={isDisabled} type="submit" onClick={(event) => {addBook({title: this.state.title, author: this.state.author, bookCode: this.state.isbn, cover: this.state.cover, pubDate: this.state.pubdate });this.resetState(event)}}>Добавить книгу</SubmitButton>
       </FormContainer>
 
     );

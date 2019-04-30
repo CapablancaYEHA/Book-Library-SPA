@@ -20,7 +20,7 @@ const ModalWindow = ({isOpen, operateModal, addBook}: ModalWindowProps) => (
   <ModalContainer isOpen={isOpen}>
     <CloseButton type="button" onClick={operateModal}/>
     <Title>Добавление новой книги</Title>
-    <BookForm addBook={addBook}/>
+    <BookForm addBook={addBook} />
   </ModalContainer>
 );
 

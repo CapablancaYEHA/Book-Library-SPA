@@ -11,10 +11,11 @@ type ButtonProps = {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: button;
   className?: string;
+  isDisabled?: boolean;
 }
 
-const Button = ({ children, className, onClick, type = "submit" }: ButtonProps) => (
-  <StyledButton onClick={onClick} type={type} className={className} >
+const Button = ({ children, isDisabled, className, onClick, type = "submit" }: ButtonProps) => (
+  <StyledButton onClick={onClick} type={type} className={className} disabled={isDisabled}>
     {children}
   </StyledButton>
 );

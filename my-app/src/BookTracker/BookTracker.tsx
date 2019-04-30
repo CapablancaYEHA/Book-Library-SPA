@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { Container } from "../layout-components/Container";
 import { BookPreview } from "./BookPreview";
 import { BookDetailed } from "./BookDetailed";
+import { BookPlaceholder } from "./BookPlaceholder";
 import { ModalWindow } from "./ModalWindow";
 
 import {
@@ -22,7 +23,7 @@ import { BookParamsTypes } from "./types/BookParamsTypes";
 import {db} from "../IndexedDB";
 
 type BookTrackerProps = {
-  books: BookParamsTypes[];
+
 };
 
 type BookTrackerState = {
@@ -54,7 +55,17 @@ class BookTracker extends React.Component<BookTrackerProps, BookTrackerState> {
     db.table('books')
       .add(bookItem)
       .then((id) => {
+        /* tslint:disable-next-line */
         const newList = [...this.state.books, Object.assign({}, book, { id })];
+        this.setState({ books: newList });
+      });
+  }
+
+  deleteBook = (id: number | undefined):void => {
+    db.table('books')
+      .delete(id)
+      .then(() => {
+        const newList = this.state.books.filter((book: BookParamsTypes) => book.id !== id);
         this.setState({ books: newList });
       });
   }
@@ -79,19 +90,29 @@ class BookTracker extends React.Component<BookTrackerProps, BookTrackerState> {
               <AddButton onClick={toggleModal}/>
             </AddButtonContainer>
             <>
-              {this.state.books.map((book, i: number) => (
-                <BookPreview key={i} book={book} />
+              {this.state.books.map((book:BookParamsTypes, i: number) => (
+                <BookPreview key={i} book={book} deleteBook={this.deleteBook} />
               ))}
             </>
           </MasterContainer>
 
-          <DetailContainer>
-            {this.state.books.map((book, j: number) => (
-              <Route key={j} path={`/book${j+1}`} render={props => <BookDetailed book={book} match={j+1} {...props}/>}/>
-            ))}
-          </DetailContainer>
+          {this.state.books[0] ?
+            <DetailContainer>
+              {this.state.books.map((book: BookParamsTypes, j: number) => (
+                <>
+                  <Route key={j} path={`/book${book.id}`} render={props =><BookDetailed book={book} match={book.id} {...props}/>}/>
+                </>
+              ))}
+            </DetailContainer>
+            :
+            <DetailContainer>
+              <BookPlaceholder/>
+            </DetailContainer>
+          }
 
-          <ModalWindow isOpen={this.state.isModalOpen} operateModal={toggleModal} addBook={this.addBook}/>
+          {/* <Route path="*" component={BookPlaceholder}/> */}
+
+          <ModalWindow isOpen={this.state.isModalOpen} operateModal={toggleModal} addBook={this.addBook} />
         </TrackerLayout>
       </Container>
     )
