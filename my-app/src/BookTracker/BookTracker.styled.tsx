@@ -48,7 +48,7 @@ const TrackerLayout = styled.div`
 const DetailContainer = styled.div`
   position: relative;
   width: 60%;
-  padding: 48px 32px;
+  padding: 16px 32px;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   overflow-y: auto;
