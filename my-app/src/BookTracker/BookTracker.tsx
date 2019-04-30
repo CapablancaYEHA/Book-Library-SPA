@@ -99,9 +99,7 @@ class BookTracker extends React.Component<BookTrackerProps, BookTrackerState> {
           {this.state.books[0] ?
             <DetailContainer>
               {this.state.books.map((book: BookParamsTypes, j: number) => (
-                <>
-                  <Route key={j} path={`/book${book.id}`} render={props =><BookDetailed book={book} match={book.id} {...props}/>}/>
-                </>
+                <Route key={j} path={`/book:${book.id}`} render={props =><BookDetailed book={book} {...props} />} />
               ))}
             </DetailContainer>
             :
